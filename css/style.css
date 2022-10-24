@@ -2,6 +2,7 @@
 /*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
 /* Bulma Utilities */
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@0;1&display=swap");
 .pagination-previous,
 .pagination-next,
 .pagination-link,
@@ -325,7 +326,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Libre Baskerville";
 }
 
 code,
@@ -10350,10 +10351,37 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   padding: 3rem 1.5rem 6rem;
 }
 
+.content {
+  font-family: "Libre Baskerville";
+}
+
 #map {
   height: 400px;
 }
 
 .main-heading {
   font-family: "Fredericka the Great";
+}
+
+.loading:after {
+  content: "   ";
+  animation: progress-ellipsis 3s infinite;
+}
+
+@keyframes progress-ellipsis {
+  0% {
+    content: "   ";
+  }
+  30% {
+    content: ".  ";
+  }
+  60% {
+    content: ".. ";
+  }
+  90% {
+    content: "...";
+  }
+}
+#quote-loading, #sidebar, #book-ref {
+  display: None;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hello Bulma!</title>
+    <title>The American World Gazetteer</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.2/dist/leaflet.css"
      integrity="sha256-sA+zWATbFveLLNqWO2gtiw3HL/lh1giY/Inf1BJ0z14="
@@ -25,18 +25,39 @@
         Exploring the world from the Library of Congress
       </p>
       <div class="columns">
-        <div class="column is-two-thirds">
+        <div class="column is-three-quarters">
           <div class="box" id="map"></div>
+        </div>
+        <div class="column is-one-quarter">
+          <div id="sidebar-loading" class="loading mb-4 mt-4">Loading</div>
+          <div id="sidebar">
+            <p class="mt-2 mb-4 is-size-5">Click on the map or...</p>
+            <div class="form-control">
+              <div class="select">
+                <select id="select-country">
+                  <option>Choose your destination</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
-        <div class="box">
+      <div id="quote-loading" class="loading mb-4 mt-4">Loading</div>
+      <div id="book-ref" class="box mb-4 mt-4">
+        <div class="columns">
+          <div class="column is-three-quarters">
             <h3 id="country-title" class="title main-heading"></h3>
             <div class="content" id="book-content">
                 <blockquote id="quote"></blockquote>
-                <cite id="book-cite"></cite>
+                <div  class="ml-6"><cite id="book-cite"></cite></div>
             </div>
+          </div>
+          <div class="column">
+            <img id="book-thumb" src="">
+          </div>
         </div>
+      </div>
     </div>
   </section>
   </body>
