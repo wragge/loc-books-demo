@@ -9,6 +9,7 @@ $( document ).ready(function() {
     map.addLayer(layer);
     var markers = L.featureGroup().addTo(map);
     var selectedMarker = L.featureGroup().addTo(map);
+
     function getQuote(countryID, countryTitle) {
         $("#book-ref").hide();
         $("#quote-loading").show();
@@ -19,6 +20,8 @@ $( document ).ready(function() {
             $("#quote").html(data[0].sentence);
             $("#book-cite").html("&ndash; <a href='https://www.loc.gov/item/" + data[0].book_id + "'>"  + data[0].title + "</a>, " + data[0].date);
             $("#book-thumb").prop("src", data[0].image_url);
+            $("#more-book").prop("href", "https://loc-books-yajhxrvxsa-ts.a.run.app/loc-books/sentences?book_id=" + data[0].book_id);
+            $("#more-country").prop("href", "https://loc-books-yajhxrvxsa-ts.a.run.app/loc-books/sentences?country_id=" + countryID);
         });
     }
 
