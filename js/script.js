@@ -53,7 +53,7 @@ $( document ).ready(function() {
         var countryTitle = selected.text();
         if (lat && lon) {
             var marker = L.circleMarker([lat, lon], options={"color": "#D63230", "weight": 3, "fillColor": "#D63230", "fillOpacity": 0.6}).addTo(selectedMarker);
-            marker.country = countryText;
+            marker.country = countryTitle;
             marker.countryID = countryID;
             marker.on('click', onMarkerClick);
             marker.bindTooltip(countryTitle);
