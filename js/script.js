@@ -1,7 +1,7 @@
 $( document ).ready(function() {
 
     // replace "toner" here with "terrain" or "watercolor"
-    var layer = new L.StamenTileLayer("watercolor");
+    var layer = new L.TileLayer("https://watercolormaps.collection.cooperhewitt.org/tile/watercolor/{z}/{x}/{y}.jpg");
     var map = new L.Map("map", {
         center: new L.LatLng(20, 10),
         zoom: 2
