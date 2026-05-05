@@ -13,15 +13,15 @@ $( document ).ready(function() {
     function getQuote(countryID, countryTitle) {
         $("#book-ref").hide();
         $("#quote-loading").show();
-        $.getJSON("https://loc-books-yajhxrvxsa-ts.a.run.app/loc-books.json?sql=select+*+from+sentences+inner+join+books+on+sentences.book_id+%3D+books.id+where+sentences.country_id+%3D+%22" + countryID +"%22+ORDER+BY+RANDOM()+LIMIT+1&_shape=array", function(data) {
+        $.getJSON("https://glam-databases.net/loc-books/loc-books.json?sql=select+*+from+sentences+inner+join+books+on+sentences.book_id+%3D+books.id+where+sentences.country_id+%3D+%22" + countryID +"%22+ORDER+BY+RANDOM()+LIMIT+1&_shape=array", function(data) {
             $("#quote-loading").hide();
             $("#book-ref").show();
             $("#country-title").html(countryTitle);
             $("#quote").html(data[0].sentence);
             $("#book-cite").html("&ndash; <a href='https://www.loc.gov/item/" + data[0].book_id + "'>"  + data[0].title + "</a>, " + data[0].date);
             $("#book-thumb").prop("src", data[0].image_url);
-            $("#more-book").prop("href", "https://loc-books-yajhxrvxsa-ts.a.run.app/loc-books/sentences?book_id=" + data[0].book_id);
-            $("#more-country").prop("href", "https://loc-books-yajhxrvxsa-ts.a.run.app/loc-books/sentences?country_id=" + countryID);
+            $("#more-book").prop("href", "https://glam-databases.net/loc-books/loc-books/sentences?book_id=" + data[0].book_id);
+            $("#more-country").prop("href", "https://glam-databases.net/loc-books/loc-books/sentences?country_id=" + countryID);
         });
     }
 
@@ -31,7 +31,7 @@ $( document ).ready(function() {
         getQuote(e.target.countryID, e.target.country);
     }
 
-    $.getJSON("https://loc-books-yajhxrvxsa-ts.a.run.app/loc-books.json?sql=select+*+from+countries+order+by+title&_shape=array", function(data) {
+    $.getJSON("https://glam-databases.net/loc-books/loc-books.json?sql=select+*+from+countries+order+by+title&_shape=array", function(data) {
         $("#sidebar-loading").hide();
         $("#sidebar").show();
         $.each(data, function(i, country) {
